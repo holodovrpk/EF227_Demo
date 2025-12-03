@@ -6,7 +6,15 @@
         xmlns:local="clr-namespace:EF227_Demo"
         mc:Ignorable="d"
         Title="MainWindow" Height="450" Width="800">
-    <Grid>
+    <StackPanel>
+        <DataGrid x:Name="PatTable" Height="300"
+                  AutoGenerateColumns="True" Margin="10"/>
 
-    </Grid>
+        <StackPanel Orientation="Horizontal">
+            <Button Content="Добавить" Width="200" Margin="10"/>
+            <Button Content="Удалить" Width="200" Margin="10" Click="Delete_Click"/>
+            <Button Content="Изменть" Width="200" Margin="10" Click="Save_Click"/>
+        </StackPanel>
+
+    </StackPanel>
 </Window>
