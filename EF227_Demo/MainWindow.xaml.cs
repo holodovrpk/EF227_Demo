@@ -96,5 +96,18 @@ namespace EF227_Demo
                 db.SaveChanges();
             }
         }
+
+        private void AddPatient_Click(object sender, RoutedEventArgs e)
+        {
+            Patient p = new Patient();
+
+            AddPatientWindow w = new AddPatientWindow() { DataContext = p};
+
+            if (w.ShowDialog() == true)
+            {
+                patients.Add(p);
+                db.SaveChanges();
+            }
+        }
     }
 }

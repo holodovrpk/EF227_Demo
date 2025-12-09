@@ -23,7 +23,7 @@ namespace EF227_Demo.Models
         // Используется современный тип DateOnly (только дата, без времени).
         // EF Core 6+ умеет прекрасно работать с этим типом,
         // и колонка в базе будет типа DATE.
-        public DateOnly DateOfBirth { get; set; }
+        public DateTime DateOfBirth { get; set; }
 
         // Телефон пациента. Необязательное поле (string?).
         // MaxLength(20) — ограничивает длину телефонного номера.
