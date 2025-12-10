@@ -5,11 +5,47 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:EF227_Demo"
         mc:Ignorable="d"
-        Title="MainWindow" Height="450" Width="800">
+        Title="MainWindow" Height="500" Width="800">
     <StackPanel>
         <DataGrid x:Name="PatTable" Height="300"
-                  AutoGenerateColumns="True" Margin="10"/>
+                  AutoGenerateColumns="True" Margin="10"
+                  SelectionChanged="PatTable_SelectionChanged"/>
 
+        <Grid Margin="10" Background="AliceBlue">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="30"/>
+                <RowDefinition Height="30"/>
+                <RowDefinition Height="30"/>
+            </Grid.RowDefinitions>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition />
+                <ColumnDefinition />
+            </Grid.ColumnDefinitions>
+
+            <StackPanel Grid.Row="0" Grid.Column="0" Orientation="Horizontal">
+                <TextBlock Text="ФИО" Margin="3"/>
+                <TextBox Text="{Binding PatientName}" Margin="3" Width="300"/>
+            </StackPanel>
+            <StackPanel Grid.Row="0" Grid.Column="1" Orientation="Horizontal">
+                <TextBlock Text="Дата рождения" Margin="3"/>
+                <DatePicker SelectedDate="{Binding DateOfBirth}" Margin="3" Width="270"/>
+            </StackPanel>
+            <StackPanel Grid.Row="1" Grid.Column="0" Orientation="Horizontal">
+                <TextBlock Text="Телефон" Margin="5"/>
+                <TextBox Text="{Binding Phone}" Margin="3" Width="300"/>
+            </StackPanel>
+            <StackPanel Grid.Row="1" Grid.Column="1" Orientation="Horizontal">
+                <TextBlock Text="Полис" Margin="5"/>
+                <TextBox Text="{Binding Polis}"  Margin="3" Width="300"/>
+            </StackPanel>
+            <StackPanel Grid.Row="2" Grid.Column="0" Grid.ColumnSpan="2" Orientation="Horizontal">
+                <TextBlock Text="Адрес" Margin="5"/>
+                <TextBox Text="{Binding Adress}" Margin="5" Width="600"/>
+            </StackPanel>
+
+        </Grid>
+        
+        
         <StackPanel Orientation="Horizontal">
             <Button Content="Добавить" Width="200" Margin="10" Click="AddPatient_Click"/>
             <Button Content="Удалить" Width="200" Margin="10" Click="Delete_Click"/>

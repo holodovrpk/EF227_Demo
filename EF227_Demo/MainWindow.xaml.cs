@@ -109,5 +109,14 @@ namespace EF227_Demo
                 db.SaveChanges();
             }
         }
+
+        private void PatTable_SelectionChanged(object sender, SelectionChangedEventArgs e)
+        {
+            if (PatTable.SelectedItem is Patient p)
+            {
+               DataContext = p;
+            }
+        }
     }
 }
+
